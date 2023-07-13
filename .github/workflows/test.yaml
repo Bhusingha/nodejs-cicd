@@ -1,5 +1,5 @@
 name: Test workflows
-run-name: Test workflow by ${{ github,actor }}
+run-name: Test workflow by ${{ github.actor }}
 on: # เมื่อตรงเงื่อนไขให้รัน action(job) ด้านล่าง
   push: # run เมื่อจะ push มาที่ branche main
     branches: [main]
