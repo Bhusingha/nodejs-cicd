@@ -8,7 +8,7 @@ on: # เมื่อตรงเงื่อนไขให้รัน action(
 jobs:
   test: # action
     name: Test TS-code
-    runs-on: "win-latest"
+    runs-on: "windows-latest"
     steps: # 2 step
       - uses: action/checkout@v3 # Github Action ถ้านอกไฟล์ เช่น ./.github/action
       - uses: action/setup-node@v3
