@@ -1,0 +1,16 @@
+name: Test workflows
+run-name: Test workflow by ${{ github,actor }}
+on: # เมื่อตรงเงื่อนไขให้รัน action(job) ด้านล่าง
+  push: # run เมื่อจะ push มาที่ branche main
+    branches: [main]
+  pull_request: # run เมื่อจะ pull มาที่ branche main หรือ develop
+    branches: [main, develop]
+job:
+  test: # action
+    name: Test TS-code
+    runs-on: "win-latest"
+    steps: # 2 step
+      - uses: action/checkout@v3 # Github Action ถ้านอกไฟล์ เช่น ./.github/action
+      - uses: action/setup-node@v3
+      - run: npm i # Shell
+      - run: npx jest
